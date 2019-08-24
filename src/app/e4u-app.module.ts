@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { E4uAppComponent } from './e4u-app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    E4uAppComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [E4uAppComponent]
 })
-export class AppModule { }
+export class E4uAppModule { }
