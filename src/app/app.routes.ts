@@ -5,6 +5,7 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { Error404Component } from './errors/404/404.component';
 import { CanActivateEventDetailsRouteGuard } from './events/event-details/event-details-rout-act.service';
 import { CanDeactivateCreateEventRouteGuard } from './events/create-event/create-event-rout-deact.service';
+import { EventListResolverService } from './events/event-list/event-list-resolver.service';
 
 export const appRoutes: Routes = [
   {
@@ -13,7 +14,10 @@ export const appRoutes: Routes = [
   },
   {
     path: 'events',
-    component: EventListComponent
+    component: EventListComponent,
+    resolve: {
+      events: EventListResolverService
+    }
   },
   {
     path: 'events/new',
