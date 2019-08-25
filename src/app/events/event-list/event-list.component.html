@@ -5,6 +5,7 @@
     <div class="col-md-5"
          *ngFor="let event of events">
       <e4u-event-thumbnail
+        (click)="handleClick()"
         [event]="event"></e4u-event-thumbnail>
     </div>
   </div>
