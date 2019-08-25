@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'e4u-app-root',
   template: `
       <e4u-nav></e4u-nav>
-      <e4u-event-list></e4u-event-list>
+      <router-outlet></router-outlet>
   `
 })
 export class AppComponent {

@@ -1,0 +1,18 @@
+
+.event-image-container {
+  text-align: center;
+}
+
+.event-image {
+  height: 200px;
+}
+
+.pad-left {
+  margin-left: 20px;
+}
+
+@media (max-width: 468px) {
+  .event-image {
+    height: 150px;
+  }
+}
