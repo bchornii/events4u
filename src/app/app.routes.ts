@@ -30,6 +30,10 @@ export const appRoutes: Routes = [
     canActivate: [CanActivateEventDetailsRouteGuard]
   },
   {
+    path: 'users',
+    loadChildren: './users/users.module#UsersModule'
+  },
+  {
     path: '',
     redirectTo: '/events',
     pathMatch: 'full'
