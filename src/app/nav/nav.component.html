@@ -36,8 +36,13 @@
       <div class="navbar-header navbar-right">
         <ul class="nav navbar-nav">
           <li>
-            <a [routerLink]="['/users/profile']"
-               routerLinkActive="link-active">Welcome John</a>
+            <a *ngIf="!isAuthenticated"
+               [routerLink]="['/users/login']"
+               routerLinkActive="link-active">Login</a>
+
+            <a *ngIf="isAuthenticated"
+               [routerLink]="['/users/profile']"
+               routerLinkActive="link-active">Welcome {{currentUserName}}</a>
           </li>
         </ul>
       </div>
