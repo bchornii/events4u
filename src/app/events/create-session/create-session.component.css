@@ -3,7 +3,9 @@ em {
   color: #e05c65;
 }
 
-.error input {
+.error input,
+.error select,
+.error textarea {
   background-color: #e3c3c5;
 }
 

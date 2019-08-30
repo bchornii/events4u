@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'e4u-create-event',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class CreateEventComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private eventService: EventService) { }
 
   ngOnInit() {
   }
@@ -19,6 +21,11 @@ export class CreateEventComponent implements OnInit {
 
   canDeactivate(): boolean {
     return true;
+  }
+
+  saveEvent(formValues) {
+    this.eventService.saveEvent(formValues);
+    this.router.navigate(['/events']);
   }
 
 }

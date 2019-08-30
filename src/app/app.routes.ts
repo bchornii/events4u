@@ -6,6 +6,7 @@ import { Error404Component } from './errors/404/404.component';
 import { CanActivateEventDetailsRouteGuard } from './events/event-details/event-details-rout-act.service';
 import { CanDeactivateCreateEventRouteGuard } from './events/create-event/create-event-rout-deact.service';
 import { EventListResolverService } from './events/event-list/event-list-resolver.service';
+import { CreateSessionComponent } from './events/create-session/create-session.component';
 
 export const appRoutes: Routes = [
   {
@@ -28,6 +29,10 @@ export const appRoutes: Routes = [
     path: 'events/:id',
     component: EventDetailsComponent,
     canActivate: [CanActivateEventDetailsRouteGuard]
+  },
+  {
+    path: 'events/session/new',
+    component: CreateSessionComponent
   },
   {
     path: 'users',

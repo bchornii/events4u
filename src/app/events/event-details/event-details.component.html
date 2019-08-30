@@ -25,4 +25,24 @@
       </div>
     </div>
   </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-2">
+      <h4 style="margin: 0">Sessions</h4>
+    </div>
+    <div class="col-md-2">
+      <a (click)="addSession()">Add Session</a>
+    </div>
+  </div>
+
+  <e4u-session-list *ngIf="!addMode"
+                    [sessions]="event?.sessions">
+  </e4u-session-list>
+
+  <e4u-create-session *ngIf="addMode"
+                      (sessionCreated)="sessionCreated($event)"
+                      (cancelAddSession)="cancelAddSession()"></e4u-create-session>
+
 </div>

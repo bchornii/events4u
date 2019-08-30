@@ -12,6 +12,9 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { Error404Component } from './errors/404/404.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateSessionComponent } from './events/create-session/create-session.component';
+import { SessionListComponent } from './events/session-list/session-list.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +24,15 @@ import { Error404Component } from './errors/404/404.component';
     NavComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent,
+    SessionListComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule,
 
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
