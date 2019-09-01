@@ -17,6 +17,10 @@ import { CreateSessionComponent } from './events/create-session/create-session.c
 import { SessionListComponent } from './events/session-list/session-list.component';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 import { DurationPipe } from './events/duration.pipe';
+import { JQ_TOKEN } from './common/jquery-service/jQuery.service';
+import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
+
+let jQuery = window['$'];
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { DurationPipe } from './events/duration.pipe';
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,12 @@ import { DurationPipe } from './events/duration.pipe';
       positionClass: 'toast-bottom-right'
     }) // ToastrModule added
   ],
-  providers: [],
+  providers: [
+    {
+      provide: JQ_TOKEN,
+      useValue: jQuery
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

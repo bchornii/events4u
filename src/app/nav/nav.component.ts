@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../users/auth.service';
+import { ISession } from '../events/models/session.model';
+import { EventService } from '../events/event.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'e4u-nav',
@@ -8,9 +11,21 @@ import { AuthService } from '../users/auth.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  searchTerm = '';
+  foundSessions: ISession[];
+
+  constructor(private authService: AuthService,
+              private eventService: EventService) { }
 
   ngOnInit() {
+  }
+
+  searchSessions() {
+    this.eventService.searchSessions(this.searchTerm)
+    .pipe(
+      tap(sessions => console.log(sessions))
+    )
+    .subscribe(sessions => this.foundSessions = sessions);
   }
 
   get isAuthenticated(): boolean {

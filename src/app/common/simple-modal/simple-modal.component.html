@@ -1,0 +1,15 @@
+<div id="e4u-simple-modal" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <ng-content select="[simple-modal-title]"></ng-content>
+      </div>
+      <div class="modal-body">
+        <ng-content select="[simple-modal-body]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
