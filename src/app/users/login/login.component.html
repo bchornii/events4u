@@ -11,8 +11,8 @@
         <label for="userName">User Name:</label>
         <em *ngIf="loginForm.controls.userName?.invalid &&
                    loginForm.controls.userName?.touched">Required</em>
-        <input id="userName" type="text" class="form-control" placeholder="User Name..." required ngModel
-          name="userName">
+        <input id="userName" type="text" class="form-control" placeholder="User Name..." required
+               ngModel name="userName">
       </div>
 
       <div class="form-group"
@@ -21,8 +21,8 @@
         <label for="password">Password:</label>
         <em *ngIf="loginForm.controls.password?.invalid &&
                    loginForm.controls.password?.touched">Required</em>
-        <input id="password" type="password" class="form-control" placeholder="Password..." required ngModel
-          name="password">
+        <input id="password" type="password" class="form-control" placeholder="Password..." required
+               ngModel name="password">
       </div>
 
       <button type="submit" class="btn btn-primary"
