@@ -11,12 +11,26 @@
   margin-left: 20px;
 }
 
+a {
+  cursor: pointer;
+}
+
+.sessions-header-name {
+  margin-top: 5px;
+}
+
+.add-session-link {
+  font-size: 2rem;
+}
+
 @media (max-width: 468px) {
   .event-image {
     height: 150px;
   }
 }
 
-a {
-  cursor: pointer;
+@media (min-width: 992px) {
+  .add-session-link {
+    text-align: right;
+  }
 }
