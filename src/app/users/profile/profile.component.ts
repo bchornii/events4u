@@ -33,8 +33,7 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfile(): void {
-    this.getControl('firstName').setValue('hello world');
-    if (this.profileForm.valid && false) {
+    if (this.profileForm.valid) {
       const formValue = this.profileForm.value;
       this.authService.updateCurrentUser(
         formValue.firstName, formValue.lastName);
