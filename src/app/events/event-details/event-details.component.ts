@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { IEvent } from '../models/event.model';
 import { ISession } from '../models/session.model';
 
@@ -18,6 +18,11 @@ export class EventDetailsComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.forEach((params: Params) => {
+      this.event = this.eventService.getEvent(+params.id);
+      this.addMode = false;
+    });
+
     const id = +this.route.snapshot.paramMap.get('id');
     this.event = this.eventService.getEvent(id);
   }
