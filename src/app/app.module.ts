@@ -19,6 +19,7 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
 import { DurationPipe } from './events/duration.pipe';
 import { JQ_TOKEN } from './common/jquery-service/jQuery.service';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
+import { ModalTriggerDirective } from './common/modal-trigger/modal-trigger.directive';
 
 let jQuery = window['$'];
 
@@ -35,7 +36,8 @@ let jQuery = window['$'];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,
