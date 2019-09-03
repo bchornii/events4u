@@ -54,7 +54,7 @@
           <input type="text" class="form-control" placeholder="Search Sessions"
                  [(ngModel)]="searchTerm" name="searchTerm">
         </div>
-        <button class="btn btn-default">
+        <button class="btn btn-default" e4uModalTrigger="simple-modal">
           Search
         </button>
       </form>
@@ -63,7 +63,7 @@
   </div>
 </div>
 
-<e4u-simple-modal>
+<e4u-simple-modal elementId="simple-modal" autoclose="true">
   <div simple-modal-title>
     <h4>Matching Sessions</h4>
   </div>

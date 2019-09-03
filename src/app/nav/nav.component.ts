@@ -22,10 +22,7 @@ export class NavComponent implements OnInit {
 
   searchSessions() {
     this.eventService.searchSessions(this.searchTerm)
-    .pipe(
-      tap(sessions => console.log(sessions))
-    )
-    .subscribe(sessions => this.foundSessions = sessions);
+      .subscribe(sessions => this.foundSessions = sessions);
   }
 
   get isAuthenticated(): boolean {

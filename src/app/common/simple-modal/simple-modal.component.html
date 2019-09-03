@@ -1,4 +1,4 @@
-<div id="e4u-simple-modal" class="modal fade" tabindex="-1">
+<div [id]="elementId" #modalcontainer class="modal fade" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,7 +7,8 @@
         </button>
         <ng-content select="[simple-modal-title]"></ng-content>
       </div>
-      <div class="modal-body">
+      <div class="modal-body"
+           (click)="close()">
         <ng-content select="[simple-modal-body]"></ng-content>
       </div>
     </div>
