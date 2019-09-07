@@ -21,6 +21,7 @@ import { JQ_TOKEN } from './common/jquery-service/jQuery.service';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
 import { ModalTriggerDirective } from './common/modal-trigger/modal-trigger.directive';
 import { UpvoteComponent } from './events/upvote/upvote.component';
+import { AddressDirective } from './events/create-event/address.directive';
 
 let jQuery = window['$'];
 
@@ -39,7 +40,8 @@ let jQuery = window['$'];
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    AddressDirective
   ],
   imports: [
     BrowserModule,
