@@ -18,13 +18,11 @@ export class EventDetailsComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.forEach((params: Params) => {
-      this.event = this.eventService.getEvent(+params.id);
+    // data is observable of resolved data in this route
+    this.route.data.forEach(data => {
+      this.event = data.event;
       this.addMode = false;
     });
-
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.event = this.eventService.getEvent(id);
   }
 
   addSession() {
@@ -35,8 +33,10 @@ export class EventDetailsComponent implements OnInit {
     const nextId = Math.max(...this.event.sessions.map(s => s.id));
     session.id = nextId + 1;
     this.event.sessions.push(session);
-    this.eventService.updateEvent(this.event);
-    this.addMode = false;
+    this.eventService.saveEvent(this.event)
+      .subscribe(() => {
+        this.addMode = false;
+      });
   }
 
   cancelAddSession() {

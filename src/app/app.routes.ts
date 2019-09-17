@@ -7,6 +7,7 @@ import { CanActivateEventDetailsRouteGuard } from './events/event-details/event-
 import { CanDeactivateCreateEventRouteGuard } from './events/create-event/create-event-rout-deact.service';
 import { EventListResolverService } from './events/event-list/event-list-resolver.service';
 import { CreateSessionComponent } from './events/create-session/create-session.component';
+import { EventResolverService } from './events/event-details/event-details-resolver.service';
 
 export const appRoutes: Routes = [
   {
@@ -28,7 +29,9 @@ export const appRoutes: Routes = [
   {
     path: 'events/:id',
     component: EventDetailsComponent,
-    canActivate: [CanActivateEventDetailsRouteGuard]
+    resolve: {
+      event: EventResolverService
+    }
   },
   {
     path: 'events/session/new',

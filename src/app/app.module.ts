@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { EventListComponent } from './events/event-list/event-list.component';
@@ -48,6 +49,7 @@ let jQuery = window['$'];
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({

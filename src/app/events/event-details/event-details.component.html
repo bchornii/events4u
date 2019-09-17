@@ -69,7 +69,7 @@
     </div>
   </div>
 
-  <e4u-session-list *ngIf="!addMode" [sessions]="event?.sessions" [filterBy]="filterBy" [sortBy]="sortBy">
+  <e4u-session-list *ngIf="!addMode" [eventId]="event?.id" [sessions]="event?.sessions" [filterBy]="filterBy" [sortBy]="sortBy">
   </e4u-session-list>
 
   <e4u-create-session *ngIf="addMode" (sessionCreated)="sessionCreated($event)" (cancelAddSession)="cancelAddSession()">
