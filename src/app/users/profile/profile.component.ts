@@ -35,10 +35,11 @@ export class ProfileComponent implements OnInit {
   saveProfile(): void {
     if (this.profileForm.valid) {
       const formValue = this.profileForm.value;
-      this.authService.updateCurrentUser(
-        formValue.firstName, formValue.lastName);
-      this.router.navigate(['/events']);
-      this.toastr.success('Profile updated.');
+      this.authService.updateCurrentUser(formValue.firstName, formValue.lastName)
+        .subscribe(() => {
+          this.router.navigate(['/events']);
+          this.toastr.success('Profile updated.');
+        });
     }
   }
 
@@ -51,6 +52,14 @@ export class ProfileComponent implements OnInit {
     } else {
       this.router.navigate(['/events']);
     }
+  }
+
+  logout() {
+    this.authService.logout()
+      .subscribe(() => {
+        this.toastr.success('You logged out successfully.');
+        this.router.navigate(['/user/login']);
+      });
   }
 
   canBeSubmitted(): boolean {

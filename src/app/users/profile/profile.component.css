@@ -22,3 +22,10 @@ em {
 .error :-ms-input-placeholder {
   color: #999;
 }
+
+@media only screen and (min-width: 300px) {
+  .float-right {
+    float: right;
+  }
+}
+

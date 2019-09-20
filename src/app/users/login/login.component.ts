@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   templateUrl: './login.component.html',
@@ -9,18 +10,21 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private toastr: ToastrService) { }
 
   ngOnInit() {
   }
 
   login(formValues) {
-    const result = this.authService.loginUser(
-      formValues.userName, formValues.password);
-
-    if (result) {
-      this.router.navigate(['/events']);
-    }
+    this.authService.loginUser(formValues.userName, formValues.password)
+      .subscribe(response => {
+        if (!response) {
+          this.toastr.error('Invalid login.');
+        } else {
+          this.router.navigate(['/events']);
+        }
+      });
   }
 
   cancel() {
