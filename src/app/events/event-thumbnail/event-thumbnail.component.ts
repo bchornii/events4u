@@ -3,8 +3,7 @@ import { IEvent } from '../models/event.model';
 
 @Component({
   selector: 'e4u-event-thumbnail',
-  templateUrl: './event-thumbnail.component.html',
-  styleUrls: ['/event-thumbnail.component.css']
+  templateUrl: './event-thumbnail.component.html'
 })
 export class EventThumbnailComponent implements OnInit {
   @Input() event: IEvent;
