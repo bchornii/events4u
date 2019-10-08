@@ -8,7 +8,7 @@ import { JQ_TOKEN } from '../jquery-service/jQuery.service';
 export class SimpleModalComponent {
   @Input() elementId: string;
   @Input() autoclose: string;
-  @ViewChild('modalcontainer') elementRef: ElementRef;
+  @ViewChild('modalcontainer', { static: true }) elementRef: ElementRef;
 
   constructor(@Inject(JQ_TOKEN)
               private $: any) { }
