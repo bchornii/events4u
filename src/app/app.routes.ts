@@ -39,7 +39,7 @@ export const appRoutes: Routes = [
   },
   {
     path: 'users',
-    loadChildren: './users/users.module#UsersModule'
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   },
   {
     path: '',
